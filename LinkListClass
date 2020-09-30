@@ -1,0 +1,20 @@
+public class LinkListClass //单链表泛型类
+    {  public LinkNode head; //存放头结点
+        public LinkList()
+        {
+            head=new LinkNode();
+            head.next=null;
+        }
+        public void CreateListR(int[] a)
+        {  LinkNode s,t;
+            t= head;
+            for(int i=0;i<a.length;i++)
+            {
+                s=new LinkNode(a[i]);
+                t.next=s;
+                t=s;
+            }
+            t.next=null;
+        }
+    }
+}
