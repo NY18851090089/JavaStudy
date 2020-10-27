@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>网页自动问候</title>
+	</head>
+	<body>
+		<script language="JavaScript">
+			var nowtime=new Date();
+			var now_hour=nowtime.getHours();
+			if((now_hour>=0 )&&(now_hour<6)){
+				document.write("你熬夜了啊！伤身体哦");
+			}else if((now_hour>=6)&&(now_hour<8)){
+				document.write("早上好啊！");
+			}else if((now_hour>=8)&&(now_hour<11)){
+				document.write("上午好！");
+			}else if((now_hour>=11)&&(now_hour<13)){
+				document.write("吃午饭了嘛！");
+			}else if((now_hour>=13)&&(now_hour<17)){
+				document.write("下午好！");
+			}else if((now_hour>=17)&&(now_hour<24)){
+				document.write("晚上好！");
+			}
+		</script>
+	</body>
+</html>

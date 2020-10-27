@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<style type="text/css">
+					.num-input{
+						width: 50px;
+						height: 20px;
+						font-size: 14px;
+						line-height: 20px;
+						padding-left:10px;
+					}
+						#select-op {
+						height: 20px;
+						width: 20px;
+						font-size: 14px;
+						appearance:none; -webkit-appearance:none;
+						padding-left:5px;
+						
+					}
+				</style>
+				<div class="multiTable" >
+					<input type="text" id="first-num" value="" class="num-input"/>
+					<select id="select-op" >	
+					  <option value ="加">+</option>
+					  <option value ="减" >-</option>
+					  <option  value="乘" selected>×</option>
+					  <option value="除">÷</option>
+					</select>
+					<input type="text" id="second-num" value="" class="num-input"/>
+					<input type="button" name="" id="sum-bt" value="=" onclick="culNum()"/>
+					<i id="result-num"></i>
+					</div>
+				<script type="text/javascript">
+					function getDomById(id){
+						return document.getElementById(id)
+					}
+					var culNum= function culNum(){
+						/* 获取两个输入框的值,并将其变成float类型，.value获取的值是字符串类型*/
+					var a=parseFloat(getDomById("first-num").value) ;
+					var b=parseFloat(getDomById("second-num").value);
+					
+					/* 获取select下拉框里的值 */
+					 var myselect =getDomById("select-op");
+					var index=myselect.selectedIndex ;  // selectedIndex代表的是你所选中项的index
+					var slValue= myselect.options[index].value;
+					// 判断slvalue的值再进行简单的加减乘除写入i标签里
+					 if(slValue=="加"){
+						 getDomById("result-num").innerHTML=a+b ;
+					 }else if(slValue=="减"){
+						 getDomById("result-num").innerHTML=a-b;
+					 }
+					 else if(slValue=="乘"){
+					 	getDomById("result-num").innerHTML=a*b;		 
+					 }
+					 else if(slValue=="除"){
+						 if(b==0){
+							alert("被除数不能为0") 
+						 }
+					 	getDomById("result-num").innerHTML=a/b;			 
+					 }
+					}
+					
+				</script>
+		
+		
+	</body>
+</html>
